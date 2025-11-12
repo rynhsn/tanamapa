@@ -51,24 +51,24 @@ function getBlynk(token) {
 		success: function (data) {
 			$('#humidity').val(data);
 
-			// let humidity;
+			let humidity;
 
-			// // Jika data kosong atau undefined, buat nilai random 70–90
-			// if (data === undefined || data === null || data === "") {
-			// 	humidity = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
-			// } else {
-			// 	humidity = data;
-			// }
+			// Jika data kosong atau undefined, buat nilai random 70–90
+			if (data === undefined || data === null || data === "") {
+				humidity = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
+			} else {
+				humidity = data;
+			}
 
-			// $('#humidity').val(humidity);
-			// console.log("Kelembaban:", humidity + "%");
+			$('#humidity').val(humidity);
+			console.log("Kelembaban:", humidity + "%");
 		},
-		// 	error: function () {
-		// 	// Kalau gagal ambil data, tetap pakai nilai acak
-		// 	let humidity = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
-		// 	$('#humidity').val(humidity);
-		// 	console.log("Kelembaban (simulasi):", humidity + "%");
-		// }
+			error: function () {
+			// Kalau gagal ambil data, tetap pakai nilai acak
+			let humidity = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
+			$('#humidity').val(humidity);
+			console.log("Kelembaban (simulasi):", humidity + "%");
+		}
 	});
 };
 
